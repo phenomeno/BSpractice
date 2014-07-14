@@ -2,11 +2,17 @@
 
 
 # 1. find website links
+link = "http://cp-studio.tistory.com/547"
+
+print link[-3:].isdigit()
+
+
+"""
 # 2. get photo url
 
 import urllib2
 
-html = urllib2.urlopen('http://cp-studio.tistory.com/544').read()
+html = urllib2.urlopen('http://cp-studio.tistory.com/545').read()
 
 
 from bs4 import BeautifulSoup
@@ -32,13 +38,16 @@ for img in imgs:
 	
 #5. add title	
 
-f = open('imggrab.html', 'w')
+f = open('/users/lee/test/bspractice/imggrab.html', 'w')
+f.write('<meta charset=\"utf-8\">')
 f.write('<p>' + title1 + '</p>')
 
 
 
 #6. add images
 for link in u:
-	f.write('<b><img src="' + link + '"/></b>')
+	f.write('<img src="' + link + '"/>')
 	
 f.close
+
+"""
