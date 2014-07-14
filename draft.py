@@ -13,15 +13,8 @@ def link(x):	#generates links based on ending number
 u = []
 def img(x):		#pulls pictures
 	
-	try:
-		html = urllib2.urlopen(x).read()
-	except urllib2.HTTPError, e:
-		pass
-	except urllib2.URLError, e:
-		pass
-	finally:
-		return ''
-	
+
+	html = urllib2.urlopen(x).read()
 	soup = BeautifulSoup(html)
 	imgs = soup.findAll('span', {'class':"imageblock"})
 	for img in imgs:
@@ -33,15 +26,8 @@ def img(x):		#pulls pictures
 t = []
 def title(x):	#grabs title
 
-	try:
-		html = urllib2.urlopen(x).read()
-	except urllib2.HTTPError, e:
-		pass
-	except urllib2.URLError, e:
-		pass
-	finally:
-		return ''
 	
+	html = urllib2.urlopen(x).read()
 	soup = BeautifulSoup(html)
 	
 	title = soup.select('div.titleWrap > h2 > a')
@@ -84,14 +70,9 @@ for x in range(122,123):
 	link(x)
 	l=l[0]
 	img(l)
-	if len(u)==0:
-		print '1'
 	title(l)
-	if len(t)==0:
-		print '2'
-	else:
-		t=t[0]
-		add(t, u)
+	t=t[0]
+	add(t, u)
 	l = []
 	u = []
 	t = []
