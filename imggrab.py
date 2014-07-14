@@ -2,17 +2,14 @@
 
 
 # 1. find website links
-link = "http://cp-studio.tistory.com/547"
-
-print link[-3:].isdigit()
 
 
-"""
+
 # 2. get photo url
 
 import urllib2
 
-html = urllib2.urlopen('http://cp-studio.tistory.com/545').read()
+html = urllib2.urlopen('http://cp-studio.tistory.com/122').read()
 
 
 from bs4 import BeautifulSoup
@@ -34,6 +31,7 @@ for img in imgs:
 	y=img.findAll(["img"])
 	z=y[0]
 	u.append(z['src'])
+
 	
 	
 #5. add title	
@@ -49,5 +47,3 @@ for link in u:
 	f.write('<img src="' + link + '"/>')
 	
 f.close
-
-"""
